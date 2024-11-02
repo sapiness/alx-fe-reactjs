@@ -2,6 +2,7 @@ import WelcomeMessage from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-f
 import Header from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/alx-react-app/src/components/Header'
 import MainContent from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/alx-react-app/src/components/MainContent'
 import Footer from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/alx-react-app/src/components/Footer'
+import UserProfile from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/alx-react-app/src/components/UserProfile'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -36,6 +37,7 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
     </>
   )
 }
