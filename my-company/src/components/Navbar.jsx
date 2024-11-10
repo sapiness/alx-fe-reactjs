@@ -4,7 +4,7 @@ const Navbar = () => {
    return (
 <nav className="Navbar">
    
-    <div className="links">
+    <div className="links" style={{ backgroundColor: 'grey', display: 'Flex', justifyContent: 'Center' }}>
     <Link to="/">Home</Link>
     <Link to="/About">About</Link>
     <Link to="/Services">Services</Link>
