@@ -8,7 +8,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ProfilePage from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/alx-react-app-props/src/components/ProfilePage';
-import { UserContext } from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/alx-react-app-props/UserContext'
+import { UserContext } from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/alx-react-app-props/src/components/UserContext'
 
 function App() {
   const [count, setCount] = useState(0)
