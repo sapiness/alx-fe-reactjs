@@ -27,6 +27,7 @@ function Contact() {
           value={formData.name}
           onChange={handleChange}
           style={{ display: 'block', margin: '10px 0' }}
+          
         />
         <input
           type="email"
