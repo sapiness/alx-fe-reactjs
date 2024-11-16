@@ -1,4 +1,4 @@
-import { useRecipeStore } from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/recipeStore/useRecipeStore';
+import { useRecipeStore } from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/recipeStore';
 
 const RecipeList = () => {
   const recipes = useRecipeStore(state => state.recipes);

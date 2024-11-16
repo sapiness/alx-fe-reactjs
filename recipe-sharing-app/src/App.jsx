@@ -2,8 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-// import RecipeList from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/RecipeList'
-// import AddRecipeForm from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/AddRecipeForm'
+import { RecipeList } from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/RecipeList'
+import { AddRecipeForm } from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/AddRecipeForm'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,8 +25,8 @@ function App() {
         </button>
         
       </div>
-      {/* <RecipeList />
-      <AddRecipeForm /> */}
+      <RecipeList />
+      <AddRecipeForm />
     </>
   )
 }
