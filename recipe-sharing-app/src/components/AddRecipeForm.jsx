@@ -1,5 +1,5 @@
 import { useState } from 'react';
-  import { useRecipeStore } from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/recipeStore';
+  import useRecipeStore from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/recipeStore';
 
   const AddRecipeForm = () => {
     const addRecipe = useRecipeStore(state => state.addRecipe);

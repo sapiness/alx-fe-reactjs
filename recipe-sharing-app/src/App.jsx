@@ -25,8 +25,10 @@ function App() {
         </button>
         
       </div>
+      <div>
       <RecipeList />
       <AddRecipeForm />
+      </div>
     </>
   )
 }
