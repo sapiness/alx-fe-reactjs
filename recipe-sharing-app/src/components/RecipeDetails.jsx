@@ -2,6 +2,8 @@
 
 import { useRecipeStore } from './recipeStore';
  import EditRecipeForm from './EditRecipeForm';
+ import DeleteRecipeButton from './DeleteRecipeButton';
+ DeleteRecipeButton
 
 const RecipeDetails = ({ recipeId,  deleteRecipe }) => {
   const recipe = useRecipeStore(state =>
@@ -14,6 +16,7 @@ const RecipeDetails = ({ recipeId,  deleteRecipe }) => {
       <h1>{recipe?.title}</h1>
       <p>{recipe?.description}</p>
       <EditRecipeForm recipeId={recipeId} />
+      <DeleteRecipeButton recipeId={recipeId} />
       {/* Render EditRecipeForm and DeleteRecipeButton here */}
       <button
               onClick={() => deleteRecipe(recipe.id)}
