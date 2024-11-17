@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import RecipeList from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/RecipeList'
 import AddRecipeForm from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/AddRecipeForm'
+import RecipeDetails from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/RecipeDetails'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,8 +28,9 @@ function App() {
         
       </div>
       <div>
-      <RecipeList />
       <AddRecipeForm />
+      <RecipeList />
+      <RecipeDetails />
       </div>
     </>
   )
