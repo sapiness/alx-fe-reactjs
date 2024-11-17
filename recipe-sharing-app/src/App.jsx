@@ -6,7 +6,6 @@ import RecipeList from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-re
 import AddRecipeForm from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/AddRecipeForm'
 import RecipeDetails from 'C:/Users/uiuxs/OneDrive/Desktop/alx-fe-reactjs/alx-fe-reactjs/recipe-sharing-app/src/components/RecipeDetails'
 
-
 function App() {
   const [count, setCount] = useState(0)
 
@@ -31,6 +30,7 @@ function App() {
       <AddRecipeForm />
       <RecipeList />
       <RecipeDetails />
+      
       </div>
     </>
   )

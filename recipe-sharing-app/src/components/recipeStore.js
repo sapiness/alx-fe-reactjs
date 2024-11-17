@@ -8,9 +8,9 @@ import { create } from 'zustand';
   deleteRecipe: (id) => {
     set(state => ({ recipes: state.recipes.filter(newRecipe => newRecipe.id !== id) }));
 },
-  toggleTask: (id) => {
-    set((state) => ({recipes: state.recipes.map(newRecipe =>newRecipe.id === id ? { ...newRecipe, completed: !newRecipe.completed } : newRecipe)}));
-  },
+  // toggleRecipe: (id) => {
+  //   set((state) => ({recipes: state.recipes.map(newRecipe =>newRecipe.id === id ? { ...newRecipe, completed: !newRecipe.completed } : newRecipe)}));
+  // },
   updateRecipe: (id) => {
     set(state => ({recipes: state.recipes.map(newRecipe =>newRecipe.id === id ?{...newRecipe, updated: !newRecipe.updated } : newRecipe)}));
   },
