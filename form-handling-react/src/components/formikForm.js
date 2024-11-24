@@ -5,16 +5,16 @@ import * as Yup from 'yup';
 
 function FormikForm() {
     const validationSchema = Yup.object().shape({
-      username: Yup.string()
-        .min(2, 'Name must be at least 2 characters')
-        .max(50, 'Name must be at most 50 characters')
-        .required('Name is required'),
-      email: Yup.string()
-        .email('Invalid email address')
-        .required('Email is required'),
-      password: Yup.string()
-        .min(8, 'Password must be at least 8 characters')
-        .required('Password is required'),
+    //   username: Yup.string()
+    //     .min(2, 'Name must be at least 2 characters')
+    //     .max(50, 'Name must be at most 50 characters')
+        username: Yup.string().required('Name is required'),
+    //   email: Yup.string()
+    //     .email('Invalid email address')
+        email: Yup.string().required('Email is required'),
+    //   password: Yup.string()
+    //     .min(8, 'Password must be at least 8 characters')
+        password: Yup.string().required('Password is required'),
     });
 
 
@@ -116,4 +116,3 @@ function FormikForm() {
 // );
 
 // export default  FormikForm;
-
