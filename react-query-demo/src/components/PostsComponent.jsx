@@ -39,7 +39,7 @@ import { useQuery, useQueryClient } from 'react-query';
 
 
 
-const FetchPosts = async () => {
+const fetchPosts = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -49,7 +49,7 @@ const FetchPosts = async () => {
 
 const PostsComponent = () => {
   const queryClient = useQueryClient();
-  const { data, error, isLoading, isError } = useQuery('posts', FetchPosts);
+  const { data, error, isLoading, isError } = useQuery('posts', fetchPosts);
   const handleRefetch = () => {
     queryClient.invalidateQueries('posts');
   };
