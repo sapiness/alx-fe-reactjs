@@ -26,12 +26,13 @@ function HomePage() {
   return (
     <div>
       <h1>Recipe Sharing Platform</h1>
-      <card className='rounded-lg shadow-lg hover:bg-blue-700 text-black'>
+      <card className='rounded-lg shadow-lg hover:bg-blue-700 text-black sm:w-400 md:w-768 grid'>
+      
       <ul>
         {recipes.map((recipe) => (
-          <li key={(recipe.id)}>
-            <h2>{recipe.title}</h2>
-            <p>{recipe.summary}</p>
+          <li className='md:grid-cols-1' key={(recipe.id)}>
+            <h2 className='md:grid-cols-2' >{recipe.title}</h2>
+            <p className='md:grid-cols-3' >{recipe.summary}</p>
            
           </li>
         ))}
