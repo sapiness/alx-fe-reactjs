@@ -31,8 +31,8 @@ function RecipeDetail() {
   }
   return (
     <div>
-      <h1>{recipe.title}</h1>
-      <img src={recipe.image} alt={recipe.title} />
+      <h1 className='text-white font-sans'>{recipe.title}</h1>
+      <img className='shadow-lg' src={recipe.image} alt={recipe.title} />
       <h2>Ingredients:</h2>
       <ul>
         {recipe.ingredients.map((ingredient) => (
