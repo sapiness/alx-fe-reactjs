@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 function AddRecipeForm({ handleAddRecipe }) {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [ingredients, setIngredients] = useState([]);
-  const [styles, setInstructions] = useState('');
+  const [steps, setInstructions] = useState('');
   const [errors, setErrors] = useState({});
   const validateForm = () => {
     const errors = {};
@@ -16,8 +17,8 @@ function AddRecipeForm({ handleAddRecipe }) {
     if (ingredients.length === 0) {
       errors.ingredients = 'At least one ingredient is required';
     }
-    if (!styles) {
-      errors.styles = 'Instructions are required';
+    if (!steps) {
+      errors.steps = 'Instructions are required';
     }
     setErrors(errors);
     return Object.keys(errors).length === 0;
@@ -29,7 +30,7 @@ function AddRecipeForm({ handleAddRecipe }) {
         title,
         image,
         ingredients,
-        styles,
+        steps,
       };
       handleAddRecipe(newRecipe);
       setTitle('');
@@ -94,12 +95,12 @@ function AddRecipeForm({ handleAddRecipe }) {
           Instructions
         </label>
         <textarea
-          className={`block w-full p-2 border rounded ${errors.styles ? 'border-red-500' : 'border-gray-300'}`}
+          className={`block w-full p-2 border rounded ${errors.steps ? 'border-red-500' : 'border-gray-300'}`}
           id="instructions"
-          value={styles}
+          value={steps}
           onChange={(event) => setInstructions(event.target.value)}
         />
-        {errors.styles && <p className="text-red-500 text-sm">{errors.styles}</p>}
+        {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
       </div>
       <button
         type="submit"
