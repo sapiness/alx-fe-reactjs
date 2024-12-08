@@ -3,6 +3,8 @@ function HomePage() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  import { Link } from 'react-router-dom';
+
   useEffect(() => {
     const loadRecipes = async () => {
       try {
@@ -30,7 +32,7 @@ function HomePage() {
       
       <ul>
         {recipes.map((recipe) => (
-          <li className='md:grid-cols-1' key={(recipe.id)}>
+          <Link to="/"> <li className='md:grid-cols-1' key={(recipe.id)}></Link>
             <h2 className='md:grid-cols-2' >{recipe.title}</h2>
             <p className='md:grid-cols-3' >{recipe.summary}</p>
            
