@@ -26,6 +26,7 @@ function HomePage() {
   return (
     <div>
       <h1>Recipe Sharing Platform</h1>
+      <div className='rounded-lg shadow-lg hover:bg-blue-700 text-black'>
       <ul>
         {recipes.map((recipe) => (
           <li key={(recipe.id)}>
@@ -35,6 +36,7 @@ function HomePage() {
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 }
