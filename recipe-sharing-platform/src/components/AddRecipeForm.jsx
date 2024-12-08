@@ -3,50 +3,83 @@ function AddRecipeForm({ handleAddRecipe }) {
   const [title, setTitle] = useState('');
   const [image, setImage] = useState('');
   const [ingredients, setIngredients] = useState([]);
-  const [ steps, setInstructions] = useState('');
-  const handleTitleChange = (event) => {
-    setTitle(event.target.value);
-  };
-  const handleImageChange = (event) => {
-    setImage(event.target.value);
-  };
-  const handleIngredientsChange = (event) => {
-    const ingredient = event.target.value;
-    setIngredients((prevIngredients) => [...prevIngredients, ingredient]);
-  };
-  const handleInstructionsChange = (event) => {
-    setInstructions(event.target.value);
+  const [styles, setInstructions] = useState('');
+  const [errors, setErrors] = useState({});
+  const validateForm = () => {
+    const errors = {};
+    if (!title) {
+      errors.title = 'Title is required';
+    }
+    if (!image) {
+      errors.image = 'Image is required';
+    }
+    if (ingredients.length === 0) {
+      errors.ingredients = 'At least one ingredient is required';
+    }
+    if (!styles) {
+      errors.styles = 'Instructions are required';
+    }
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newRecipe = {
-      title,
-      image,
-      ingredients,
-      steps,
-    };
-    handleAddRecipe(newRecipe);
-    setTitle('');
-    setImage('');
-    setIngredients([]);
-    setInstructions('');
+    if (validateForm()) {
+      const newRecipe = {
+        title,
+        image,
+        ingredients,
+        styles,
+      };
+      handleAddRecipe(newRecipe);
+      setTitle('');
+      setImage('');
+      setIngredients([]);
+      setInstructions('');
+    }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Title:
-        <input type="text" value={title} onChange={handleTitleChange} />
-      </label>
-      <label>
-        Image:
-        <input type="text" value={image} onChange={handleImageChange} />
-      </label>
-      <label>
-        Ingredients:
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-white rounded shadow-md">
+      <h2 className="text-lg font-bold mb-4">Add Recipe</h2>
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
+          Title
+        </label>
         <input
+          className={`block w-full p-2 border rounded ${errors.title ? 'border-red-500' : 'border-gray-300'}`}
           type="text"
+          id="title"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+        {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
+          Image
+        </label>
+        <input
+          className={`block w-full p-2 border rounded ${errors.image ? 'border-red-500' : 'border-gray-300'}`}
+          type="text"
+          id="image"
+          value={image}
+          onChange={(event) => setImage(event.target.value)}
+        />
+        {errors.image && <p className="text-red-500 text-sm">{errors.image}</p>}
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="ingredients">
+          Ingredients
+        </label>
+        <input
+          className={`block w-full p-2 border rounded ${errors.ingredients ? 'border-red-500' : 'border-gray-300'}`}
+          type="text"
+          id="ingredients"
           value={ingredients[ingredients.length - 1]}
-          onChange={handleIngredientsChange}
+          onChange={(event) => {
+            const newIngredient = event.target.value;
+            setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+          }}
           placeholder="Add ingredient"
         />
         <ul>
@@ -54,12 +87,26 @@ function AddRecipeForm({ handleAddRecipe }) {
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
-      </label>
-      <label>
-        Instructions:
-        <textarea value={ steps} onChange={handleInstructionsChange} />
-      </label>
-      <button type="submit">Add Recipe</button>
+        {errors.ingredients && <p className="text-red-500 text-sm">{errors.ingredients}</p>}
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="instructions">
+          Instructions
+        </label>
+        <textarea
+          className={`block w-full p-2 border rounded ${errors.styles ? 'border-red-500' : 'border-gray-300'}`}
+          id="instructions"
+          value={styles}
+          onChange={(event) => setInstructions(event.target.value)}
+        />
+        {errors.styles && <p className="text-red-500 text-sm">{errors.styles}</p>}
+      </div>
+      <button
+        type="submit"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Add Recipe
+      </button>
     </form>
   );
 }
