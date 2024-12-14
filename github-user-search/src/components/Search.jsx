@@ -9,16 +9,17 @@ function Search() {
     event.preventDefault();
     setLoading(true);
     try {
-      const data = await githubService.fetchUserData(username);
-      setUserData(data);
-      setError(null);
+        const data = await githubService.fetchUserData('https://api.github.com/users/{username}');
+        setUserData(data);
+        setError(null);
     } catch (error) {
-      setError('Looks like we can\'t find the user');
-      setUserData(null);
+        setError("Looks like we can't find the user");
+        setUserData(null);
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
-  };
+}
+    
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -41,6 +42,7 @@ function Search() {
           <p>
             <a href={userData.html_url} target="_blank">View Profile</a>
           </p>
+          <h3 className="login">@username</h3>
         </div>
       ) : null}
     </div>
